@@ -6,8 +6,9 @@ import HomeScreen from "../HomeScreen";
 describe("HomeScreen", () => {
   test("should renders correctly", () => {
     const wrapper = render(<HomeScreen />);
-    const { getByText } = wrapper;
+    const { getByText, getByTestId } = wrapper;
 
     expect(getByText("HomeScreen")).toBeTruthy();
+    expect(getByTestId("home-screen")).toBeTruthy();
   });
 });
