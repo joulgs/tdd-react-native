@@ -14,8 +14,10 @@ export default function App() {
       colors={[colors.light_blue, colors.dark_blue]}
       style={styles.container}
     >
-      <Text>HomeScreen</Text>
-      <Text>{now.format("DD-MMMM-YYYY")}</Text>
+      <View style={styles.date_container}>
+        <Text style={styles.date}>{now.format("DD MMM YYYY")}</Text>
+        <Text style={styles.day}>{now.format("dddd")}</Text>
+      </View>
       <StatusBar style="auto" />
     </LinearGradient>
   );
@@ -27,5 +29,15 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
+  },
+  date: {
+    fontSize: 18,
+  },
+  day: {
+    fontSize: 28,
+  },
+  date_container: {
+    self: "flex-start",
+    alignItems: "center",
   },
 });

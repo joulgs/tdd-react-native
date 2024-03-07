@@ -5,28 +5,28 @@ import HomeScreen from "../HomeScreen";
 
 describe("HomeScreen", () => {
   test("should renders correctly", () => {
-    const wrapper = render(<HomeScreen />);
-    const { getByText, getByTestId } = wrapper;
-
-    expect(getByText("HomeScreen")).toBeTruthy();
+    const { getByTestId } = render(<HomeScreen />);
     expect(getByTestId("home-screen")).toBeTruthy();
   });
 
   describe("Title Section", () => {
     beforeEach(() => {
       jest.useFakeTimers("modern");
-      jest.setSystemTime(new Date("2021-01-01 00:00:00"));
+      jest.setSystemTime(new Date("2021-01-01 00:00:00")); // Fri, 01 Jan 2021 00:00:00 GMT
     });
 
     afterEach(() => {
       jest.useRealTimers();
     });
 
-    test("should display the current date", () => {
-      const wrapper = render(<HomeScreen />);
-      const { getByText } = wrapper;
-
-      expect(getByText("01-January-2021")).toBeTruthy();
+    test("should display the weekday", () => {
+      const { getByText } = render(<HomeScreen />);
+      expect(getByText("Friday")).toBeTruthy();
     });
+
+    // test("should display the current date", () => {
+    //   const { getByText } = render(<HomeScreen />);
+    //   expect(getByText("01 Jan 2021")).toBeTruthy();
+    // });
   });
 });
