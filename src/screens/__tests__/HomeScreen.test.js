@@ -10,12 +10,12 @@ describe("HomeScreen", () => {
   });
 
   describe("Title Section", () => {
-    beforeEach(() => {
+    beforeAll(() => {
       jest.useFakeTimers("modern");
       jest.setSystemTime(new Date("2021-01-01 00:00:00")); // Fri, 01 Jan 2021 00:00:00 GMT
     });
 
-    afterEach(() => {
+    afterAll(() => {
       jest.useRealTimers();
     });
 
@@ -24,9 +24,9 @@ describe("HomeScreen", () => {
       expect(getByText("Friday")).toBeTruthy();
     });
 
-    // test("should display the current date", () => {
-    //   const { getByText } = render(<HomeScreen />);
-    //   expect(getByText("01 Jan 2021")).toBeTruthy();
-    // });
+    test("should display the current date", () => {
+      const { getByText } = render(<HomeScreen />);
+      expect(getByText("01 Jan 2021")).toBeTruthy();
+    });
   });
 });
