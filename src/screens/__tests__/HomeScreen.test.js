@@ -48,6 +48,11 @@ describe("HomeScreen", () => {
     expect(getByTestId("mock-weather-current")).toBeTruthy();
   });
 
+  test("should contain a screen divider", () => {
+    const { getByTestId } = render(<HomeScreen />);
+    expect(getByTestId("home-screen-divider")).toBeTruthy();
+  });
+
   test("should contain a section to get the weather coordinates", () => {
     WeatherCoordinates.mockReturnValue(
       <View testID="mock-weather-coordinates" />

@@ -23,6 +23,7 @@ export default function App() {
       </View>
 
       <WeatherCurrent />
+      <Text testID="home-screen-divider">Or</Text>
       <WeatherCoordinates />
 
       <StatusBar style="auto" />
