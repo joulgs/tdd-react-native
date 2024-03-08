@@ -5,6 +5,9 @@ import { LinearGradient } from "expo-linear-gradient";
 import { colors } from "../constants";
 import moment from "moment";
 
+import WeatherCurrent from "../components/WeatherCurrent";
+import WeatherCoordinates from "../components/WeatherCoordinates";
+
 export default function App() {
   const now = moment(new Date());
 
@@ -18,6 +21,10 @@ export default function App() {
         <Text style={styles.date}>{now.format("DD MMM YYYY")}</Text>
         <Text style={styles.day}>{now.format("dddd")}</Text>
       </View>
+
+      <WeatherCurrent />
+      <WeatherCoordinates />
+
       <StatusBar style="auto" />
     </LinearGradient>
   );
